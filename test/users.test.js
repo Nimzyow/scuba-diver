@@ -4,7 +4,7 @@ const request = supertest(app);
 
 describe("users route", () => {
   describe("responds with 200", () => {
-    it("with post request", (done) => {
+    xit("with post request", (done) => {
       let data = {
         username: "nimzy",
         email: "n_soufiani@hotmail.com",
