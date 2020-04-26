@@ -4,15 +4,17 @@ const request = supertest(app);
 
 describe("auths route", () => {
   describe("responds with 200", () => {
-    it("with get request", async (done) => {
-      const response = await request.get("/auth");
-      expect(response.status).toBe(200);
-      done();
+    it("with get request", (done) => {
+      request
+        .get("/auth")
+        .set("Content-type", "application/json")
+        .expect(200, done);
     });
-    it("with post request", async (done) => {
-      const response = await request.post("/auth");
-      expect(response.status).toBe(200);
-      done();
+    it("with post request", (done) => {
+      request
+        .post("/auth")
+        .set("Content-type", "application/json")
+        .expect(200, done);
     });
   });
 });

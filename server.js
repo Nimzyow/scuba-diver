@@ -1,9 +1,11 @@
 const express = require("express");
+const connectDB = require("./config/db");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.json({ msg: "Hello world!" });
-});
+connectDB();
+
+//initialise middlware
+app.use(express.json({ extended: false }));
 
 app.use("/users", require("./routes/users"));
 app.use("/auth", require("./routes/auth"));
