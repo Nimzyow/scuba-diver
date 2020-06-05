@@ -1,3 +1,3 @@
-# Scuba diver in Node, Express and React
+# Scuba diver
 
-This is a simple test to see if I can make a node + express back end to a scuba diving application  
+A Scuba Diver application TDD'd from beginning to end
