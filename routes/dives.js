@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
-const User = require("../model/User");
-const Dive = require("../model/Dive");
+const User = require("../models/User");
+const Dive = require("../models/Dive");
 const { check, validationResult } = require("express-validator");
 
 //route   GET  /dives
@@ -54,7 +54,7 @@ router.post(
       console.error(err.message);
       res.status(500).send("Server error");
     }
-  }
+  },
 );
 
 //route   PUT   /dives/:id
@@ -80,7 +80,7 @@ router.put("/:id", auth, async (req, res) => {
     dive = await Dive.findByIdAndUpdate(
       req.params.id,
       { $set: diveFields },
-      { new: true }
+      { new: true },
     );
     res.json(dive);
   } catch (err) {
