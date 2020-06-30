@@ -15,12 +15,31 @@ export const Table = () => {
   }, []);
 
   const [table, setTable] = useState([]);
+  const [colorRow, setColorRow] = useState("");
+
+  useEffect(() => {
+    console.log("colorRow ", colorRow);
+  }, [colorRow]);
+
+  const rowSelect = (rowPosition) => {
+    console.log("row position ", rowPosition);
+    setColorRow(`row${rowPosition}`);
+  };
 
   const setBox = (iterations, rowPosition, style, timeFigures, start = 0) => {
     for (let i = start; i < iterations; i++) {
       if (timeFigures) {
         TABLE_ARRAY[rowPosition].push(
-          <div className={`${style}`}>{timeFigures[i]}</div>,
+          <div
+            className={
+              colorRow !== `row${rowPosition}`
+                ? `${style}`
+                : `${style} horizontalBorder`
+            }
+            onClick={() => rowSelect(rowPosition)}
+          >
+            {timeFigures[i]}
+          </div>,
         );
       } else {
         TABLE_ARRAY[rowPosition].push(<div className={`${style}`}></div>);

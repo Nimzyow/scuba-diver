@@ -37,6 +37,10 @@ $boxSize: 30px;
   border: 1px solid red;
 }
 
+.horizontalBorder {
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
 .row {
   display: flex;
   flex-direction: row;
