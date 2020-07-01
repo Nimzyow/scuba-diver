@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Box } from "../../components/box/Box";
 
 import * as Row from "./rowFigures/RowFigures";
 
@@ -6,7 +7,7 @@ import "./Table.scss";
 
 export const Table = () => {
   const TABLE_ARRAY = [];
-
+  let keyValue = 0;
   useEffect(() => {
     for (let i = 0; i < 28; i++) {
       TABLE_ARRAY.push([]);
@@ -18,7 +19,9 @@ export const Table = () => {
   const [colorRow, setColorRow] = useState("");
 
   useEffect(() => {
-    console.log("colorRow ", colorRow);
+    console.log("how?");
+
+    //displayTable();
   }, [colorRow]);
 
   const rowSelect = (rowPosition) => {
@@ -30,19 +33,18 @@ export const Table = () => {
     for (let i = start; i < iterations; i++) {
       if (timeFigures) {
         TABLE_ARRAY[rowPosition].push(
-          <div
-            className={
-              colorRow !== `row${rowPosition}`
-                ? `${style}`
-                : `${style} horizontalBorder`
-            }
-            onClick={() => rowSelect(rowPosition)}
-          >
-            {timeFigures[i]}
-          </div>,
+          <Box
+            key={keyValue}
+            boxStyle={style}
+            colorRow={colorRow}
+            rowNumber={rowPosition}
+            timeFigure={timeFigures[i]}
+          />,
         );
+        keyValue++;
       } else {
-        TABLE_ARRAY[rowPosition].push(<div className={`${style}`}></div>);
+        TABLE_ARRAY[rowPosition].push(<Box key={keyValue} boxStyle={style} />);
+        keyValue++;
       }
     }
   };
@@ -50,31 +52,50 @@ export const Table = () => {
   const setRow = () => {
     setRow0();
     setRow1();
-    setRow27();
+    //setRow27();
     setTable(TABLE_ARRAY);
+    //displayTable();
   };
 
-  const setLetter = (letter, row, style) => {
-    TABLE_ARRAY[row].push(<div className={`${style}`}>{letter}</div>);
+  const setLetter = (letter, rowPosition, style) => {
+    TABLE_ARRAY[rowPosition].push(
+      <Box
+        key={keyValue}
+        boxStyle={style}
+        letter={letter}
+        colorRow={colorRow}
+        rowNumber={rowPosition}
+      />,
+    );
+    keyValue++;
   };
 
   const setRow0 = () => {
-    setBox(1, 0, "emptyBox borderSet");
-    setBox(12, 0, "emptyBox borderSet", Row.DEPTH_FIGURES);
+    setBox(1, 0, "emptyWhiteBoxBlackBorderNoClick");
+    setBox(12, 0, "WhiteBoxBlackBorderNoClick", Row.DEPTH_FIGURES);
   };
 
   const setRow1 = () => {
     let rowNumber = 1;
-    setLetter("A", rowNumber, "box letterStyle");
-    setBox(8, rowNumber, "box blue", Row.FIRST_TIME_FIGURES);
-    setBox(12, rowNumber, "box grey", Row.FIRST_TIME_FIGURES, 8);
-    setBox(14, rowNumber, "emptyBox blue emptyBoxBorderBlue");
-    setLetter("A", rowNumber, "emptyBox borderSet letterStyle blue");
-    setBox(1, rowNumber, "emptyBox blue emptyBoxBorderBlue");
-    setBox(1, rowNumber, "box surfaceInterval", Row.A_SURFACE_INTERVAL);
-    setBox(1, rowNumber, "emptyBox blue emptyBoxBorderBlue");
+    //setLetter("A", rowNumber, "box letterStyle", 0);
+    // TABLE_ARRAY[rowNumber].push(
+    //   <Box
+    //     boxStyle="letterBox"
+    //     letter="A"
+    //     colorRow={colorRow}
+    //     rowNumber={rowNumber}
+    //   />,
+    // );
+    setLetter("A", rowNumber, "letterBoxBlue");
+    setBox(8, rowNumber, "BoxBlueBlackBorder", Row.FIRST_TIME_FIGURES);
+    //setBox(12, rowNumber, "box grey", Row.FIRST_TIME_FIGURES, 8);
+    //setBox(26, rowNumber, "emptyBox blue emptyBoxBorderBlue", undefined, 12);
+    //setLetter("A", rowNumber, "emptyBox borderSet letterStyle blue", 1);
+    //setBox(27, rowNumber, "emptyBox blue emptyBoxBorderBlue", undefined, 26);
+    //setBox(29, rowNumber, "box surfaceInterval", Row.A_SURFACE_INTERVAL, 28);
+    //setBox(30, rowNumber, "emptyBox blue emptyBoxBorderBlue", undefined, 31);
     rowNumber += 1;
-    setRow2(rowNumber);
+    //setRow2(rowNumber);
   };
 
   const setRow2 = (rowNumber) => {
@@ -386,11 +407,38 @@ export const Table = () => {
     setBox(26, 27, "emptyBox borderSet letterStyle", Row.PRESSURE_GROUP);
   };
 
+  const displayTable = (figures, boxStyle, rowNumber) => {
+    return figures.map((figure) => {
+      return (
+        <Box
+          boxStyle={boxStyle}
+          timeFigure={figure}
+          rowNumber={rowNumber}
+          colorRow={colorRow}
+        />
+      );
+    });
+  };
+
   return (
     <div className="tableContainer">
-      {table.map((element) => (
-        <div className="row">{element}</div>
-      ))}
+      <div className="row">
+        <Box boxStyle="emptyWhiteBoxBlackBorderNoClick" />
+        {displayTable(Row.DEPTH_FIGURES, "WhiteBoxBlackBorderNoClick")}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBoxBlue" rowNumber={1} letter="A" />
+        {displayTable(Row.FIRST_TIME_FIGURES, "BoxBlueBlackBorder", 1)}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={2} letter="B" />
+        {displayTable(Row.SECOND_TIME_FIGURES, "BoxBlackBorder", 2)}
+      </div>
+
+      {/* <button onClick={() => setColorRow("row1")}>MEOWMEOW</button>
+      <div>{colorRow === "row1" ? "hello" : "byebye"}</div>
+      <Box boxStyle="letterBoxBlue" colorRow={colorRow} rowNumber={1} /> */}
+      <button onClick={() => setColorRow("row1")}>MEOWMEOW</button>
     </div>
   );
 };
