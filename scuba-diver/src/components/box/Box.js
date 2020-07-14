@@ -36,9 +36,9 @@ export const Box = ({
       );
     case "emptyWhiteBoxBlackBorderNoClick":
       return <div className="emptyBox borderSet"></div>;
-    case "WhiteBoxBlackBorderNoClick":
+    case "whiteBoxBlackBorderNoClick":
       return <div className="emptyBox borderSet">{timeFigure}</div>;
-    case "BoxBlueBlackBorder":
+    case "boxBlueBlackBorder":
       return (
         <div
           className={
@@ -50,7 +50,7 @@ export const Box = ({
           {timeFigure}
         </div>
       );
-    case "BoxBlackBorder":
+    case "boxBlackBorder":
       return (
         <div
           className={
@@ -60,7 +60,7 @@ export const Box = ({
           {timeFigure}
         </div>
       );
-    case "BoxGreyBlackBorder":
+    case "greyBoxBlackBorder":
       return (
         <div
           className={

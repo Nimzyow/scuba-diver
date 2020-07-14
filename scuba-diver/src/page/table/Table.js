@@ -407,16 +407,37 @@ export const Table = () => {
     setBox(26, 27, "emptyBox borderSet letterStyle", Row.PRESSURE_GROUP);
   };
 
-  const displayTable = (figures, boxStyle, rowNumber) => {
-    return figures.map((figure) => {
-      return (
-        <Box
-          boxStyle={boxStyle}
-          timeFigure={figure}
-          rowNumber={rowNumber}
-          colorRow={colorRow}
-        />
-      );
+  const displayTable = (figures, boxStyle, rowNumber, start, finish) => {
+    // for (let i = 0; i < figures.length; i++) {
+    //   return (
+    //     <Box
+    //       boxStyle={boxStyle}
+    //       timeFigure={figures[i]}
+    //       rowNumber={rowNumber}
+    //       colorRow={colorRow}
+    //     />
+    //   );
+    // }
+
+    return figures.map((figure, index) => {
+      if (index >= start && index <= finish) {
+        return (
+          <Box
+            boxStyle={boxStyle}
+            timeFigure={figure}
+            rowNumber={rowNumber}
+            colorRow={colorRow}
+          />
+        );
+      }
+      // return (
+      //   <Box
+      //     boxStyle={boxStyle}
+      //     timeFigure={figure}
+      //     rowNumber={rowNumber}
+      //     colorRow={colorRow}
+      //   />
+      // );
     });
   };
 
@@ -428,7 +449,8 @@ export const Table = () => {
       </div>
       <div className="row">
         <Box boxStyle="letterBoxBlue" rowNumber={1} letter="A" />
-        {displayTable(Row.FIRST_TIME_FIGURES, "BoxBlueBlackBorder", 1)}
+        {displayTable(Row.FIRST_TIME_FIGURES, "boxBlueBlackBorder", 1, 0, 7)}
+        {displayTable(Row.FIRST_TIME_FIGURES, "greyBoxBlackBorder", 1, 8, 11)}
       </div>
       <div className="row">
         <Box boxStyle="letterBox" rowNumber={2} letter="B" />
