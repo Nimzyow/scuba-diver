@@ -38,7 +38,7 @@ export const Box = ({
       return <div className="emptyBox borderSet"></div>;
     case "whiteBoxBlackBorderNoClick":
       return <div className="emptyBox borderSet">{timeFigure}</div>;
-    case "boxBlueBlackBorder":
+    case "blueBoxBlackBorder":
       return (
         <div
           className={

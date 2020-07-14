@@ -449,12 +449,13 @@ export const Table = () => {
       </div>
       <div className="row">
         <Box boxStyle="letterBoxBlue" rowNumber={1} letter="A" />
-        {displayTable(Row.FIRST_TIME_FIGURES, "boxBlueBlackBorder", 1, 0, 7)}
+        {displayTable(Row.FIRST_TIME_FIGURES, "blueBoxBlackBorder", 1, 0, 7)}
         {displayTable(Row.FIRST_TIME_FIGURES, "greyBoxBlackBorder", 1, 8, 11)}
       </div>
       <div className="row">
         <Box boxStyle="letterBox" rowNumber={2} letter="B" />
-        {displayTable(Row.SECOND_TIME_FIGURES, "BoxBlackBorder", 2)}
+        {displayTable(Row.SECOND_TIME_FIGURES, "boxBlackBorder", 2, 0, 7)}
+        {displayTable(Row.SECOND_TIME_FIGURES, "greyBoxBlackBorder", 2, 8, 11)}
       </div>
 
       {/* <button onClick={() => setColorRow("row1")}>MEOWMEOW</button>
