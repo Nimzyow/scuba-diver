@@ -34,8 +34,6 @@ export const Box = ({
           {letter}
         </div>
       );
-    case "emptyWhiteBoxBlackBorderNoClick":
-      return <div className="emptyBox borderSet"></div>;
     case "whiteBoxBlackBorderNoClick":
       return <div className="emptyBox borderSet">{timeFigure}</div>;
     case "blueBoxBlackBorder":

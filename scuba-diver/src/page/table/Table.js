@@ -408,17 +408,6 @@ export const Table = () => {
   };
 
   const displayTable = (figures, boxStyle, rowNumber, start, finish) => {
-    // for (let i = 0; i < figures.length; i++) {
-    //   return (
-    //     <Box
-    //       boxStyle={boxStyle}
-    //       timeFigure={figures[i]}
-    //       rowNumber={rowNumber}
-    //       colorRow={colorRow}
-    //     />
-    //   );
-    // }
-
     return figures.map((figure, index) => {
       if (index >= start && index <= finish) {
         return (
@@ -436,7 +425,7 @@ export const Table = () => {
   return (
     <div className="tableContainer">
       <div className="row">
-        <Box boxStyle="emptyWhiteBoxBlackBorderNoClick" />
+        <Box boxStyle="whiteBoxBlackBorderNoClick" />
         {displayTable(
           Row.DEPTH_FIGURES,
           "whiteBoxBlackBorderNoClick",
