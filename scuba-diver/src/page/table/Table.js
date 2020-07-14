@@ -430,14 +430,6 @@ export const Table = () => {
           />
         );
       }
-      // return (
-      //   <Box
-      //     boxStyle={boxStyle}
-      //     timeFigure={figure}
-      //     rowNumber={rowNumber}
-      //     colorRow={colorRow}
-      //   />
-      // );
     });
   };
 
@@ -445,7 +437,13 @@ export const Table = () => {
     <div className="tableContainer">
       <div className="row">
         <Box boxStyle="emptyWhiteBoxBlackBorderNoClick" />
-        {displayTable(Row.DEPTH_FIGURES, "WhiteBoxBlackBorderNoClick")}
+        {displayTable(
+          Row.DEPTH_FIGURES,
+          "whiteBoxBlackBorderNoClick",
+          0,
+          0,
+          11,
+        )}
       </div>
       <div className="row">
         <Box boxStyle="letterBoxBlue" rowNumber={1} letter="A" />
