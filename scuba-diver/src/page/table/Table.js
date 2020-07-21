@@ -407,6 +407,8 @@ export const Table = () => {
     setBox(26, 27, "emptyBox borderSet letterStyle", Row.PRESSURE_GROUP);
   };
 
+  const highlightRow = () => {};
+
   const displayTable = (figures, boxStyle, rowNumber, start, finish) => {
     return figures.map((figure, index) => {
       if (index >= start && index <= finish) {
@@ -416,6 +418,7 @@ export const Table = () => {
             timeFigure={figure}
             rowNumber={rowNumber}
             colorRow={colorRow}
+            setColorRow={(e) => setColorRow(e)}
           />
         );
       }
@@ -441,14 +444,9 @@ export const Table = () => {
       </div>
       <div className="row">
         <Box boxStyle="letterBox" rowNumber={2} letter="B" />
-        {displayTable(Row.SECOND_TIME_FIGURES, "boxBlackBorder", 2, 0, 7)}
+        {displayTable(Row.SECOND_TIME_FIGURES, "whiteBoxBlackBorder", 2, 0, 7)}
         {displayTable(Row.SECOND_TIME_FIGURES, "greyBoxBlackBorder", 2, 8, 11)}
       </div>
-
-      {/* <button onClick={() => setColorRow("row1")}>MEOWMEOW</button>
-      <div>{colorRow === "row1" ? "hello" : "byebye"}</div>
-      <Box boxStyle="letterBoxBlue" colorRow={colorRow} rowNumber={1} /> */}
-      <button onClick={() => setColorRow("row1")}>MEOWMEOW</button>
     </div>
   );
 };

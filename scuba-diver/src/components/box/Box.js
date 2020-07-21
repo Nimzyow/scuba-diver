@@ -7,7 +7,7 @@ export const Box = ({
   rowNumber,
   letter,
   timeFigure,
-  i,
+  setColorRow,
 }) => {
   switch (boxStyle) {
     case "letterBox":
@@ -44,16 +44,18 @@ export const Box = ({
               ? "box blue horizontalBorder"
               : "box blue"
           }
+          onClick={() => setColorRow(`row${rowNumber}`)}
         >
           {timeFigure}
         </div>
       );
-    case "boxBlackBorder":
+    case "whiteBoxBlackBorder":
       return (
         <div
           className={
             colorRow === `row${rowNumber}` ? "box horizontalBorder" : "box"
           }
+          onClick={() => setColorRow(`row${rowNumber}`)}
         >
           {timeFigure}
         </div>
@@ -66,6 +68,7 @@ export const Box = ({
               ? "box grey horizontalBorder"
               : "box grey"
           }
+          onClick={() => setColorRow(`row${rowNumber}`)}
         >
           {timeFigure}
         </div>
