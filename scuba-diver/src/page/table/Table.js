@@ -447,6 +447,26 @@ export const Table = () => {
         {displayTable(Row.SECOND_TIME_FIGURES, "whiteBoxBlackBorder", 2, 0, 7)}
         {displayTable(Row.SECOND_TIME_FIGURES, "greyBoxBlackBorder", 2, 8, 11)}
       </div>
+      <div className="row">
+        <Box boxStyle="letterBoxBlue" rowNumber={3} letter="C" />
+        {displayTable(Row.THIRD_TIME_FIGURES, "blueBoxBlackBorder", 3, 0, 7)}
+        {displayTable(Row.THIRD_TIME_FIGURES, "greyBoxBlackBorder", 3, 8, 11)}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={4} letter="D" />
+        {displayTable(Row.FOURTH_TIME_FIGURES, "whiteBoxBlackBorder", 4, 0, 7)}
+        {displayTable(Row.FOURTH_TIME_FIGURES, "greyBoxBlackBorder", 4, 8, 11)}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBoxBlue" rowNumber={5} letter="E" />
+        {displayTable(Row.FIFTH_TIME_FIGURES, "blueBoxBlackBorder", 5, 0, 7)}
+        {displayTable(Row.FIFTH_TIME_FIGURES, "greyBoxBlackBorder", 5, 8, 11)}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={6} letter="F" />
+        {displayTable(Row.SIXTH_TIME_FIGURES, "whiteBoxBlackBorder", 6, 0, 7)}
+        {displayTable(Row.SIXTH_TIME_FIGURES, "greyBoxBlackBorder", 6, 8, 11)}
+      </div>
     </div>
   );
 };
