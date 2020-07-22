@@ -73,6 +73,19 @@ export const Box = ({
           {timeFigure}
         </div>
       );
+    case "blackBoxBlackBorder":
+      return (
+        <div
+          className={
+            colorRow === `row${rowNumber}`
+              ? "box black horizontalBorder"
+              : "box black"
+          }
+          onClick={() => setColorRow(`row${rowNumber}`)}
+        >
+          {timeFigure}
+        </div>
+      );
     default:
       break;
   }

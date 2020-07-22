@@ -465,7 +465,8 @@ export const Table = () => {
       <div className="row">
         <Box boxStyle="letterBox" rowNumber={6} letter="F" />
         {displayTable(Row.SIXTH_TIME_FIGURES, "whiteBoxBlackBorder", 6, 0, 7)}
-        {displayTable(Row.SIXTH_TIME_FIGURES, "greyBoxBlackBorder", 6, 8, 11)}
+        {displayTable(Row.SIXTH_TIME_FIGURES, "greyBoxBlackBorder", 6, 8, 10)}
+        {displayTable(Row.SIXTH_TIME_FIGURES, "blackBoxBlackBorder", 6, 11, 11)}
       </div>
     </div>
   );
