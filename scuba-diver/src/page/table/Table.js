@@ -225,6 +225,52 @@ export const Table = () => {
           7,
         )}
       </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={18} letter="R" />
+        {displayTable(
+          Row.EIGHTTEENTH_TIME_FIGURES,
+          "whiteBoxBlackBorder",
+          18,
+          0,
+          5,
+        )}
+        {displayTable(
+          Row.EIGHTTEENTH_TIME_FIGURES,
+          "greyBoxBlackBorder",
+          18,
+          6,
+          7,
+        )}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={19} letter="S" />
+        {displayTable(
+          Row.NINETEENTH_TIME_FIGURES,
+          "blueBoxBlackBorder",
+          19,
+          0,
+          4,
+        )}
+        {displayTable(
+          Row.NINETEENTH_TIME_FIGURES,
+          "greyBoxBlackBorder",
+          19,
+          5,
+          5,
+        )}
+        {displayTable(
+          Row.NINETEENTH_TIME_FIGURES,
+          "blackBoxBlackBorder",
+          19,
+          6,
+          6,
+        )}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={20} letter="T" />
+        {displayTable(Row.TWENTY_TIME_FIGURES, "whiteBoxBlackBorder", 20, 0, 3)}
+        {displayTable(Row.TWENTY_TIME_FIGURES, "greyBoxBlackBorder", 20, 4, 6)}
+      </div>
     </div>
   );
 };
