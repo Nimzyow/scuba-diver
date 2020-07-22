@@ -271,6 +271,108 @@ export const Table = () => {
         {displayTable(Row.TWENTY_TIME_FIGURES, "whiteBoxBlackBorder", 20, 0, 3)}
         {displayTable(Row.TWENTY_TIME_FIGURES, "greyBoxBlackBorder", 20, 4, 6)}
       </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={21} letter="U" />
+        {displayTable(
+          Row.TWENTYONE_TIME_FIGURES,
+          "blueBoxBlackBorder",
+          21,
+          0,
+          2,
+        )}
+        {displayTable(
+          Row.TWENTYONE_TIME_FIGURES,
+          "greyBoxBlackBorder",
+          21,
+          3,
+          4,
+        )}
+        {displayTable(
+          Row.TWENTYONE_TIME_FIGURES,
+          "blackBoxBlackBorder",
+          21,
+          5,
+          5,
+        )}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={22} letter="V" />
+        {displayTable(
+          Row.TWENTYTWO_TIME_FIGURES,
+          "whiteBoxBlackBorder",
+          22,
+          0,
+          1,
+        )}
+        {displayTable(
+          Row.TWENTYTWO_TIME_FIGURES,
+          "greyBoxBlackBorder",
+          22,
+          2,
+          4,
+        )}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={23} letter="W" />
+        {displayTable(
+          Row.TWENTYTHREE_TIME_FIGURES,
+          "greyBoxBlackBorder",
+          23,
+          0,
+          3,
+        )}
+        {displayTable(
+          Row.TWENTYTHREE_TIME_FIGURES,
+          "blackBoxBlackBorder",
+          23,
+          4,
+          4,
+        )}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={24} letter="X" />
+        {displayTable(
+          Row.TWENTYFOUR_TIME_FIGURES,
+          "greyBoxBlackBorder",
+          24,
+          0,
+          2,
+        )}
+        {displayTable(
+          Row.TWENTYFOUR_TIME_FIGURES,
+          "blackBoxBlackBorder",
+          24,
+          3,
+          3,
+        )}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={25} letter="Y" />
+        {displayTable(
+          Row.TWENTYFIVE_TIME_FIGURES,
+          "greyBoxBlackBorder",
+          25,
+          0,
+          1,
+        )}
+        {displayTable(
+          Row.TWENTYFIVE_TIME_FIGURES,
+          "blackBoxBlackBorder",
+          25,
+          2,
+          2,
+        )}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={26} letter="Z" />
+        {displayTable(
+          Row.TWENTYSIX_TIME_FIGURES,
+          "blackBoxBlackBorder",
+          26,
+          0,
+          1,
+        )}
+      </div>
     </div>
   );
 };
