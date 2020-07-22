@@ -468,6 +468,18 @@ export const Table = () => {
         {displayTable(Row.SIXTH_TIME_FIGURES, "greyBoxBlackBorder", 6, 8, 10)}
         {displayTable(Row.SIXTH_TIME_FIGURES, "blackBoxBlackBorder", 6, 11, 11)}
       </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={7} letter="G" />
+        {displayTable(Row.SEVENTH_TIME_FIGURES, "blueBoxBlackBorder", 6, 0, 7)}
+        {displayTable(Row.SEVENTH_TIME_FIGURES, "greyBoxBlackBorder", 6, 8, 9)}
+        {displayTable(
+          Row.SEVENTH_TIME_FIGURES,
+          "blackBoxBlackBorder",
+          6,
+          10,
+          10,
+        )}
+      </div>
     </div>
   );
 };
