@@ -470,8 +470,8 @@ export const Table = () => {
       </div>
       <div className="row">
         <Box boxStyle="letterBox" rowNumber={7} letter="G" />
-        {displayTable(Row.SEVENTH_TIME_FIGURES, "blueBoxBlackBorder", 6, 0, 7)}
-        {displayTable(Row.SEVENTH_TIME_FIGURES, "greyBoxBlackBorder", 6, 8, 9)}
+        {displayTable(Row.SEVENTH_TIME_FIGURES, "blueBoxBlackBorder", 7, 0, 7)}
+        {displayTable(Row.SEVENTH_TIME_FIGURES, "greyBoxBlackBorder", 7, 8, 9)}
         {displayTable(
           Row.SEVENTH_TIME_FIGURES,
           "blackBoxBlackBorder",
@@ -479,6 +479,21 @@ export const Table = () => {
           10,
           10,
         )}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={8} letter="H" />
+        {displayTable(Row.EIGHTH_TIME_FIGURES, "whiteBoxBlackBorder", 8, 0, 7)}
+        {displayTable(Row.EIGHTH_TIME_FIGURES, "greyBoxBlackBorder", 8, 8, 9)}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={9} letter="I" />
+        {displayTable(Row.NINTH_TIME_FIGURES, "blueBoxBlackBorder", 9, 0, 7)}
+        {displayTable(Row.NINTH_TIME_FIGURES, "greyBoxBlackBorder", 9, 8, 9)}
+      </div>
+      <div className="row">
+        <Box boxStyle="letterBox" rowNumber={10} letter="J" />
+        {displayTable(Row.TENTH_TIME_FIGURES, "whiteBoxBlackBorder", 8, 0, 7)}
+        {displayTable(Row.TENTH_TIME_FIGURES, "greyBoxBlackBorder", 8, 8, 9)}
       </div>
     </div>
   );
