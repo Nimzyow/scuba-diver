@@ -48,6 +48,12 @@ export const Table = () => {
         <Box boxStyle="letterBox" rowNumber={2} letter="B" />
         {displayTable(Row.SECOND_TIME_FIGURES, "whiteBoxBlackBorder", 2, 0, 7)}
         {displayTable(Row.SECOND_TIME_FIGURES, "greyBoxBlackBorder", 2, 8, 11)}
+        <Box
+          boxStyle="letterBoxEmpty"
+          rowNumber={2}
+          letter=""
+          colorRow={colorRow}
+        />
       </div>
       <div className="row">
         <Box boxStyle="letterBox" rowNumber={3} letter="C" />

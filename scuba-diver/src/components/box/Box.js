@@ -22,6 +22,18 @@ export const Box = ({
           {letter}
         </div>
       );
+    case "letterBoxEmpty":
+      return (
+        <div
+          className={
+            colorRow === `row${rowNumber}`
+              ? "emptyBox letterStyle horizontalBorder"
+              : "emptyBox letterStyle"
+          }
+        >
+          {letter}
+        </div>
+      );
     case "letterBoxBlue":
       return (
         <div

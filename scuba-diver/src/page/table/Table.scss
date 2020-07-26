@@ -21,6 +21,11 @@ $boxSize: 30px;
   border-bottom: 1px solid black;
 }
 
+.emptyBox:hover {
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
+
 .emptyBoxBorderBlue {
   border: 1px solid #3986f2;
 }
